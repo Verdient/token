@@ -1,0 +1,28 @@
+{
+    "name": "verdient/token",
+    "description": "Offline token generation and validation",
+    "type": "library",
+    "keywords": ["offline", "token", "validation", "authentication"],
+    "homepage": "https://github.com/Verdient/token",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Verdient.",
+            "email": "fagui.zhu@foxmail.com",
+            "homepage": "https://github.com/Verdient"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Verdient/token/issues",
+        "source": "https://github.com/Verdient/token"
+    },
+    "require": {
+        "php": ">=7.0.0",
+        "verdient/chorus": "^0.0.5",
+        "tuupola/base62": "^2.0",
+        "verdient/signature": "^0.0.1"
+    },
+    "autoload": {
+        "psr-4": {"Verdient\\token\\": "src"}
+    }
+}

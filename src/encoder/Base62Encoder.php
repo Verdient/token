@@ -4,20 +4,15 @@ namespace Verdient\token\encoder;
 use Tuupola\Base62Proxy;
 
 /**
- * Base62Encoder
  * Base62编码器
- * -------------
  * @author Verdient。
  */
 class Base62Encoder implements EncoderInterface
 {
 	/**
-	 * isUUID(String $value)
 	 * 是否是UUID
-	 * ---------------------
-	 * @param String $value 内容
-	 * -------------------------
-	 * @return Boolean
+	 * @param string $value 内容
+	 * @return bool
 	 * @author Verdient。
 	 */
 	protected function isUUID($value){
@@ -25,38 +20,29 @@ class Base62Encoder implements EncoderInterface
 	}
 
 	/**
-	 * encodeNumber(Mixed $data)
 	 * 数字编码
-	 * -------------------------
-	 * @param Mixed $data 数据
-	 * ----------------------
-	 * @return String|False
+	 * @param mixed $data 数据
+	 * @return string|false
 	 * @author Verdient。
 	 */
-	public function encodeNumber($data) : String {
+	protected function encodeNumber($data) : String {
 		return Base62Proxy::encodeInteger($data);
 	}
 
 	/**
-	 * decodeNumber(String $data)
 	 * 解码
-	 * --------------------------
-	 * @param String $data 数据
-	 * ------------------------
-	 * @return String
+	 * @param string $data 数据
+	 * @return string
 	 * @author Verdient。
 	 */
-	public function decodeNumber($data) : String {
+	protected function decodeNumber($data) : String {
 		return Base62Proxy::decodeInteger($data);
 	}
 
 	/**
-	 * decodeUUID(String $data)
 	 * 解码UUID
-	 * ------------------------
-	 * @param String $data 数据
-	 * ------------------------
-	 * @return String
+	 * @param string $data 数据
+	 * @return string
 	 * @author Verdient。
 	 */
 	public function decodeUUID($data) : String {
@@ -74,12 +60,7 @@ class Base62Encoder implements EncoderInterface
 	}
 
 	/**
-	 * encode(Mixed $data)
-	 * 编码
-	 * -------------------
-	 * @param Mixed $data 数据
-	 * ----------------------
-	 * @return String
+	 * @inheritdoc
 	 * @author Verdient。
 	 */
 	public function encode($data) : String {
@@ -100,12 +81,7 @@ class Base62Encoder implements EncoderInterface
 	}
 
 	/**
-	 * decode(String $data)
-	 * 解码
-	 * -------------------
-	 * @param String $data 数据
-	 * ------------------------
-	 * @return String
+	 * @inheritdoc
 	 * @author Verdient。
 	 */
 	public function decode($value) : String {

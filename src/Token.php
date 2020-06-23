@@ -8,67 +8,49 @@ use Verdient\signature\Signature;
 use token\encoder\EncoderInterface;
 
 /**
- * Token
  * 令牌
- * -----
  * @author Verdient。
  */
 class Token extends \chorus\BaseObject
 {
 	/**
-	 * @var const RANDOM_LENGTH
-	 * 随机数长度
-	 * ------------------------
+	 * @var int 随机数长度
 	 * @author Verdient。
 	 */
 	const RANDOM_LENGTH = 10;
 
 	/**
-	 * @var Integer $duration
-	 * 有效期
-	 * ----------------------
+	 * @var int 有效期
 	 * @author Verdient。
 	 */
 	public $duration = 2592000;
 
 	/**
-	 * @var String $key
-	 * 签名秘钥
-	 * ----------------
+	 * @var string 签名秘钥
 	 * @author Verdient。
 	 */
 	public $key = null;
 
 	/**
-	 * @var Integer $cost
-	 * 代价
-	 * ------------------
+	 * @var int 代价
 	 * @author Verdient。
 	 */
 	public $cost = 10;
 
 	/**
-	 * @var String|Array $encoder
-	 * 编码器
-	 * --------------------------
+	 * @var string|array 编码器
 	 * @author Verdient。
 	 */
 	public $encoder = 'Verdient\token\encoder\Base62Encoder';
 
 	/**
-	 * @var Encoder $_encoder
-	 * 编码器实例
-	 * ----------------------
+	 * @var Encoder 编码器实例
 	 * @author Verdient。
 	 */
 	protected $_encoder = null;
 
 	/**
-	 * init()
-	 * 初始化
-	 * ------
 	 * @inheritdoc
-	 * -----------
 	 * @author Verdient。
 	 */
 	public function init(){
@@ -79,9 +61,7 @@ class Token extends \chorus\BaseObject
 	}
 
 	/**
-	 * getEncoder()
 	 * 获取编码器
-	 * -----------
 	 * @return EncoderInterface
 	 * @author Verdient。
 	 */
@@ -93,14 +73,11 @@ class Token extends \chorus\BaseObject
 	}
 
 	/**
-	 * generate(String $identity[, Integer $duration = null, Integer $cost = null])
 	 * 生成认证信息
-	 * ----------------------------------------------------------------------------
-	 * @param String $identity 认证信息
-	 * @param Integer $duration 有效期
-	 * @param Integer $cost 代价
-	 * -------------------------------
-	 * @return String
+	 * @param string $identity 认证信息
+	 * @param int $duration 有效期
+	 * @param int $cost 代价
+	 * @return string
 	 * @author Verdient。
 	 */
 	public function generate($identity, $duration = null, $cost = null){
@@ -114,12 +91,9 @@ class Token extends \chorus\BaseObject
 	}
 
 	/**
-	 * parse(String $token)
 	 * 解析令牌
-	 * --------------------
-	 * @param String $token 令牌
-	 * -------------------------
-	 * @return String
+	 * @param string $token 令牌
+	 * @return string
 	 * @author Verdient。
 	 */
 	public function parse($token){
@@ -138,13 +112,10 @@ class Token extends \chorus\BaseObject
 	}
 
 	/**
-	 * addSalt(String $token[, Integer $cost = null])
 	 * 加盐
-	 * ----------------------------------------------
-	 * @param String $token 秘钥
-	 * @param Integer $cost 代价
-	 * -------------------------
-	 * @return String
+	 * @param string $token 秘钥
+	 * @param int $cost 代价
+	 * @return string
 	 * @author Verdient。
 	 */
 	protected function addSalt($token, $cost = null){
@@ -163,10 +134,8 @@ class Token extends \chorus\BaseObject
 	}
 
 	/**
-	 * removeSalt($token)
 	 * 移除盐
-	 * ------------------
-	 * @return String
+	 * @return string
 	 * @author Verdient。
 	 */
 	protected function removeSalt($token){
@@ -206,13 +175,10 @@ class Token extends \chorus\BaseObject
 	}
 
 	/**
-	 * getPosition(String $data[, Integer $cost = null])
 	 * 获取加盐的位置
-	 * -------------------------------------------------
-	 * @param String $data 数据
-	 * @param Integer $cost 代价
-	 * ------------------------
-	 * @return Array
+	 * @param string $data 数据
+	 * @param int $cost 代价
+	 * @return array
 	 * @author Verdient。
 	 */
 	protected function getPosition($data, $cost = null){
@@ -244,12 +210,9 @@ class Token extends \chorus\BaseObject
 	}
 
 	/**
-	 * signature(String $data)
 	 * 签名
-	 * -----------------------
-	 * @param String $data 数据
-	 * -----------------------
-	 * @return String
+	 * @param string $data 数据
+	 * @return string
 	 * @author Verdient。
 	 */
 	protected function signature($data){

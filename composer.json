@@ -18,9 +18,9 @@
     },
     "require": {
         "php": ">=7.0.0",
-        "verdient/chorus": "^0.0.6",
+        "verdient/chorus": "^0.1.0",
         "tuupola/base62": "^2.0",
-        "verdient/signature": "^0.0.1"
+        "verdient/signature": "^0.1.0"
     },
     "autoload": {
         "psr-4": {"Verdient\\token\\": "src"}

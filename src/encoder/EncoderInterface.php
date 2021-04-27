@@ -7,20 +7,20 @@ namespace Verdient\token\encoder;
  */
 interface EncoderInterface
 {
-	/**
-	 * 编码
-	 * @param mixed $data 数据
-	 * @return string
-	 * @author Verdient。
-	 */
-	public function encode($data) : string;
+    /**
+     * 编码
+     * @param mixed $data 数据
+     * @return string
+     * @author Verdient。
+     */
+    public function encode($data) : string;
 
 
-	/**
-	 * 解码
-	 * @param string $data 数据
-	 * @return string
-	 * @author Verdient。
-	 */
-	public function decode(string $data): string;
+    /**
+     * 解码
+     * @param string $data 数据
+     * @return string
+     * @author Verdient。
+     */
+    public function decode(string $data): string;
 }
